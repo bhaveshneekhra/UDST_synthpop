@@ -164,7 +164,8 @@ def compare_to_constraints(synth, constraints):
     w = constraints >= 1
     counts, constraints = counts[w], constraints[w]
 
-    return chisquare(counts.values, constraints.values)
+    # return chisquare(counts.values, constraints.values)
+    return chisquare(counts.values, constraints.values*np.mean(counts.values)/np.mean(constraints.values))
 
 
 def draw_households(
